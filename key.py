@@ -139,8 +139,8 @@ def hex2bytes(h: str) -> bytes:
 if __name__ == "__main__":
     # ——— Inputs ———
     # Replace these with your recovered M9 and genuine C:
-    M9_hex = "00112233445566778899aabbccddeeff"  # <— put your 16-byte round-9 hex here
-    C_hex  = "00112233445566778899aabbccddeeff"  # <— from your C: line in cipher_list.txt
+    M9_hex = "85fb1f21c9f8b140df1deb6015cd2ccc"  # <— put your 16-byte round-9 hex here
+    C_hex  = "F3EFE64049AC3AAB5030757154F79EF2"  # <— from your C: line in cipher_list.txt
     
     M9 = hex2bytes(M9_hex)
     C  = hex2bytes(C_hex)

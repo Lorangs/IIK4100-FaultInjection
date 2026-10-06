@@ -53,7 +53,7 @@ def hex_to_bytes(h):
 
 def main():
     # 1) Read and parse the file
-    fname = 'cipher_list.txt'
+    fname = 'Cipher.txt'
     with open(fname, 'r') as f:
         lines = [L.strip() for L in f if L.strip()]
     # Genuine ciphertext
