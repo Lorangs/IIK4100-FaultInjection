@@ -53,7 +53,7 @@ def hex_to_bytes(h):
 
 def main():
     # 1) Read and parse the file
-    fname = 'Cipher_List_Group_3.txt'
+    fname = 'cipher_list.txt'
     with open(fname, 'r') as f:
         lines = [L.strip() for L in f if L.strip()]
     # Genuine ciphertext
@@ -62,9 +62,9 @@ def main():
     # Faulty ciphertexts
     faulty = {}
     for L in lines[1:]:
+        assert L.startswith('D')
         name, hx = L.split(':',1)
-        if not name.startswith('D'):
-            continue
+        print(name, '\t', hx)
         idx = int(name[1:], 10)
         faulty[idx] = hex_to_bytes(hx)
 
@@ -86,6 +86,7 @@ def main():
     round9 = [None] * 16
     for j0, vals in sorted(groups.items()):
         if len(vals) != 8:
+            print(f'Byte {j0} has {len(vals)} faults (expected 8)')
             raise ValueError(f'Byte {j0} has {len(vals)} faults (expected 8)')
         observed = set(vals)
         found = False
